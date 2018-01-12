@@ -1,7 +1,13 @@
 'use strict'
 function colorChoice(color) {
+    var _this = this;
+
+     this.c = color;
+}
+
+colorChoice.prototype.color = function(color) {
     if (color === 'red') {
-        let string = convert(0, 0, 255);
+        let string = convert(255, 0, 0);
          let red = string.replace(/([#])\w+/g, '0x');
          return red;   
     } else
@@ -88,3 +94,6 @@ function colorChoice(color) {
         return "0x" + ctoHex(r) + ctoHex(g) + ctoHex(b);
     }
 };
+module.exports = colorChoice;
+
+

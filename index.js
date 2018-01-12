@@ -3,80 +3,67 @@ function colorChoice() {};
 
 colorChoice.prototype.get = function(color) {
     if (color === 'red') {
-        let string = convert(255, 0, 0);
-         let red = string.replace(/(#)/g, '0x');
+        let red = convert(255, 0, 0);
          return red;   
     } else
 
     if (color === 'blue') {
-        let string = convert(0, 0, 255);
-        let blue = string.replace(/(#)/g, '0x');
+        let blue = convert(0, 0, 255);
         return blue;
     } else
 
     if (color === 'purple') {
-        let string = convert(128, 0, 128);
-        let purple = string.replace(/(#)/g, '0x');
+        let purple = convert(128, 0, 128);
         return purple;
     } else
 
     if (color === 'green') {
-        let string = convert(0, 128, 0);
-        let green = string.replace(/(#)/g, '0x');
+        let green = convert(22, 171, 22);
         return green;
     } else
 
     if (color === 'cyan') {
-        let string = convert(0, 255, 255);
-        let cyan = string.replace(/(#)/g, '0x');
+        let cyan = convert(0, 255, 255);
         return cyan;
     } else
 
     if (color === 'turquoise') {
-        let string = convert(64, 224, 208);
-        let turquoise = string.replace(/(#)/g, '0x');
+        let turquoise = convert(64, 224, 208);
         return turquoise;
     } else
 
     if (color === 'gray') {
-        let string = convert(128, 128, 128);
-        let gray = string.replace(/(#)/g, '0x');
+        let gray = convert(128, 128, 128);
         return gray;
     } else
 
     if (color === 'white') {
-        let string = convert(255, 255, 255);
-        let white = string.replace(/(#)/g, '0x');
+        let white = convert(255, 255, 255);
         return white;
     } else
 
     if (color === 'black') {
-        let string = convert(0, 0, 0);
-        let black = string.replace(/(#)/g, '0x');
+        let black = convert(0, 0, 0);
         return black;
     } else
 
     if (color === 'pink') {
-        let string = convert(255, 192, 203);
-        let pink = string.replace(/(#)/g, '0x');
+        let pink = convert(255, 192, 203);
         return pink;
     } else
 
     if (color === 'magenta') {
-        let string = convert(255, 0, 255);
-        let magenta = string.replace(/(#)/g, '0x');
+        let magenta = convert(255, 0, 255);
         return magenta;
     } else 
 
     if (color === 'yellow') {
-        let string = convert(255, 255, 0);
-        let yellow = string.replace(/(#)/g, '0x');
+        let yellow = convert(255, 255, 0);
         return yellow;
     } else
 
     if (color === 'toxic') {
-        let string = convert(73, 255, 0);
-        let toxic = string.replace(/(#)/g, '0x');
+        let toxic = convert(73, 255, 0);
         return toxic;
     };
 };
@@ -85,7 +72,6 @@ colorChoice.prototype.rgb = function(hex) {
     if (!hex) return;
     return htr(hex);
 };
-
 
 
     // Convert HEX to RGB
@@ -103,10 +89,10 @@ function ctoHex(c) {
     };
     
 function convert(r, g, b) {
-        return "0x" + ctoHex(r) + ctoHex(g) + ctoHex(b);
+        let rgb = "0x" + ctoHex(r) + ctoHex(g) + ctoHex(b);
+        let final = parseInt(rgb);
+        return final;
     };
 
  
 module.exports = colorChoice;
-
-

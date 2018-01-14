@@ -73,6 +73,14 @@ colorChoice.prototype.rgb = function(hex) {
     return htr(hex);
 };
 
+colorChoice.prototype.hex = function(r,g,b) {
+    var bin = r << 16 | g << 8 | b;
+    return (function(h){
+        return '#' + new Array(7-h.length).join("0")+h
+    })(bin.toString(16).toUpperCase())
+};
+
+
 
     // Convert HEX to RGB
 function htr(hex) {
@@ -93,6 +101,7 @@ function convert(r, g, b) {
         let final = parseInt(rgb);
         return final;
     };
-
  
 module.exports = colorChoice;
+
+

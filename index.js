@@ -1,7 +1,7 @@
 'use strict'
 function colorChoice() {};
 
-colorChoice.prototype.get = function(color) { // TEST
+colorChoice.prototype.get = function(color) {
     if (color === 'red') {
         let red = convert(255, 0, 0);
          return red;   

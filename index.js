@@ -123,5 +123,7 @@ function htra(hex) {
     if (Error) throw new Error('Invalid Hex.');
 };
 
+var Colors = new colorChoice();
 
-module.exports = colorChoice;
+
+module.exports = Colors;

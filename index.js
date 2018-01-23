@@ -1,10 +1,11 @@
 'use strict'
+
 function colorChoice() {};
 
 colorChoice.prototype.get = function(color) {
     if (color === 'red') {
         let red = convert(255, 0, 0);
-         return red;   
+        return red;
     } else
 
     if (color === 'blue') {
@@ -55,7 +56,7 @@ colorChoice.prototype.get = function(color) {
     if (color === 'magenta') {
         let magenta = convert(255, 0, 255);
         return magenta;
-    } else 
+    } else
 
     if (color === 'yellow') {
         let yellow = convert(255, 255, 0);
@@ -73,35 +74,54 @@ colorChoice.prototype.rgb = function(hex) {
     return htr(hex);
 };
 
-colorChoice.prototype.hex = function(r,g,b) {
+colorChoice.prototype.hex = function(r, g, b) {
     var bin = r << 16 | g << 8 | b;
-    return (function(h){
-        return '#' + new Array(7-h.length).join("0")+h
+    return (function(h) {
+        return '#' + new Array(7 - h.length).join("0") + h
     })(bin.toString(16).toUpperCase())
 };
 
+colorChoice.prototype.rgba = function(hex) {
+    if (!hex) return;
+    return htra(hex);
+}
 
 
-    // Convert HEX to RGB
+// Convert HEX to RGB
 function htr(hex) {
-        if (!hex) return;
-        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        let rgb = `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})`;
-        return rgb;
-    };
+    if (!hex) return;
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    let rgb = `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})`;
+    return rgb;
+};
 
-    // Convert RGB to HEX
+// Convert RGB to HEX
 function ctoHex(c) {
-        var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex.toUpperCase();
-    };
-    
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex.toUpperCase();
+};
+
+
 function convert(r, g, b) {
-        let rgb = "0x" + ctoHex(r) + ctoHex(g) + ctoHex(b);
-        let final = parseInt(rgb);
-        return final;
-    };
- 
+    let rgb = "0x" + ctoHex(r) + ctoHex(g) + ctoHex(b);
+    let final = parseInt(rgb);
+    return final;
+};
+
+
+// HEX to RGBA
+function htra(hex) {
+    var c;
+    if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+        c = hex.substring(1).split('');
+        if (c.length == 3) {
+            c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c = '0x' + c.join('');
+        return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',1)';
+    }
+    if (Error) throw new Error('Invalid Hex.');
+};
+
+
 module.exports = colorChoice;
-
-

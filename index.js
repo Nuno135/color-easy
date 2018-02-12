@@ -69,6 +69,11 @@ class Colors {
             let toxic = utils.convert(73, 255, 0);
             return toxic;
         };
+
+        if (color === 'orange') {
+            let orange = utils.convert(255, 165, 0);
+            return orange;
+        }
     }
 
     static rgb(hex) {

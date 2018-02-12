@@ -1,8 +1,6 @@
 <h1><b>easy-color</b></h1>
 An easy way to use colors in NodeJS.
 
-<b>Works well with discord.js Rich-Embeds.</b>
-
 ## Installation
 ```bash
 npm install color-easy
@@ -10,13 +8,15 @@ npm install color-easy
 
 ## Usage
 ```js
-var Color = require('color-easy');
-var colors = new Color();
+var colors = require('color-easy');
 
 // Simple way to get colors
-colors.get('blue') // Outputs 0x0000FF
-colors.rgb('#0000FF') // Outputs rgb(0, 0, 255)
-colors.rgba('#0000FF') // Outputs rgba(0, 0, 255, 1)
-colors.hex(0, 0, 255) // Outputs #0000FF
+colors.get('blue'); // Outputs #0000FF
+colors.rgb('#0000FF'); // Outputs rgb(0, 0, 255)
+colors.rgba('#0000FF'); // Outputs rgba(0, 0, 255, 1)
+colors.hex(0, 0, 255); // Outputs #0000FF
+colors.randomHex(); // Outputs a random hex such as #6F29F6
+colors.randomRGB(); // Outputs a random rgb such as rgb(84, 63, 100)
+colors.randomRGBA(); // Outputs a random rgba such as rgba(212,113,189,0.3)
 ```
 New functions are being added.

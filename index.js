@@ -108,8 +108,6 @@ class Colors {
     static randomRGBA() {
         return `rgba(${r},${g},${b},${a})`;
     }
-
-
 }
 
 

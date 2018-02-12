@@ -1,4 +1,4 @@
-<h1><b>easy-color</b></h1>
+<h1><b>color-easy</b></h1>
 An easy way to use colors in NodeJS.
 
 ## Installation

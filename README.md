@@ -19,4 +19,21 @@ colors.randomHex(); // Outputs a random hex such as #6F29F6
 colors.randomRGB(); // Outputs a random rgb such as rgb(84, 63, 100)
 colors.randomRGBA(); // Outputs a random rgba such as rgba(212,113,189,0.3)
 ```
+## Available colors
+```bash
+red
+blue
+purple
+green
+cyan
+turquoise
+gray
+white
+black
+pink
+magenta
+yellow
+toxic
+orange
+```
 New functions are being added.

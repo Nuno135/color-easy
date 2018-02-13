@@ -74,6 +74,11 @@ class Colors {
             let orange = utils.convert(255, 165, 0);
             return orange;
         }
+
+        if (color === 'brown') {
+            let brown = utils.convert(165, 42, 42);
+            return brown;
+        }
     }
 
     static rgb(hex) {
@@ -109,7 +114,6 @@ class Colors {
         return `rgba(${r},${g},${b},${a})`;
     }
 }
-
 
 var r = utils.random(255);
 var g = utils.random(255);

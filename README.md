@@ -35,5 +35,6 @@ magenta
 yellow
 toxic
 orange
+brown
 ```
 New functions are being added.
